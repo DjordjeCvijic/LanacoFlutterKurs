@@ -1,7 +1,9 @@
 import 'dart:developer';
-import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
 
+import 'package:gap/gap.dart';
+import 'package:flutter/material.dart';
+
+import '/screens/log_in_screen.dart';
 import 'screens/home_screen.dart';
 
 void main() {
@@ -20,8 +22,11 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: HomeScreen()
-      //const MyHomePage(title: 'Flutter Demo Home Page'),
+      //home:
+      //const LogInScreen(),
+      home: const HomeScreen(),
+
+      // home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
@@ -46,10 +51,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    log('BUILD');
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.red,
-        title: Text("zdravo"),
+        title: const Text("zdravo"),
       ),
       body: Center(
         child: Column(
