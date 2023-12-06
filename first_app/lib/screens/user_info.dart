@@ -1,7 +1,9 @@
 import 'package:first_app/helpers/constants.dart';
+import 'package:first_app/widgets/counter.dart';
 import 'package:flutter/material.dart';
 import 'package:first_app/helpers/dummy_data.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:gap/gap.dart';
 
 class UserInfo extends StatelessWidget {
   const UserInfo({
@@ -69,7 +71,9 @@ class UserInfo extends StatelessWidget {
               leading: SvgPicture.asset(CustomIcons.phone),
               title: Text(phoneNumber ?? 'Nema broja telefona'),
               tileColor: Colors.grey,
-            )
+            ),
+            const Gap(30),
+            Counter()
           ],
         ),
       ),
