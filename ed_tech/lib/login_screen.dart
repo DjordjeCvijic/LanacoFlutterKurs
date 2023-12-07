@@ -1,3 +1,5 @@
+import 'package:ed_tech/app_navigation/app_navigator.dart';
+import 'package:ed_tech/app_navigation/app_navigator_provider.dart';
 import 'package:ed_tech/helpers/constants.dart';
 import 'package:ed_tech/widgets/my_button.dart';
 import 'package:ed_tech/widgets/my_text_button.dart';
@@ -7,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:gap/gap.dart';
+import 'package:provider/provider.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -59,7 +62,14 @@ class LoginScreen extends StatelessWidget {
                 MyButton(
                   buttonText: 'Log in',
                   onButtonPress: () {
-                    print("Kliknuli smo na dugme");
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                        builder: (context) => ChangeNotifierProvider(
+                          create: (context) => AppNavigatorProvider(),
+                          child: AppNavigator(),
+                        ),
+                      ),
+                    );
                   },
                 ),
                 const Gap(16),

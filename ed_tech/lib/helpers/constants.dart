@@ -7,6 +7,12 @@ class CustomImages {
 class CustomIcons {
   static const String facebookLogin = 'assets/icons/facebook_login.svg';
   static const String showPasswordIcon = 'assets/icons/show_password_icon.svg';
+  static const String coursesNavigationIcon =
+      'assets/icons/courses_navigation_icon.svg';
+  static const String profileNavigationIcon =
+      'assets/icons/profile_navigation_icon.svg';
+  static const String settingNavigationIcon =
+      'assets/icons/settings_navigation_icon.svg';
 }
 
 class CustomColors {
