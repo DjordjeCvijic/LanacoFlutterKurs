@@ -9,11 +9,16 @@ class AppNavigator extends StatelessWidget {
   AppNavigator({
     Key? key,
   }) : super(key: key);
-  static const routeName = "/app-navigator";
 
   final Map<int, dynamic> listOfScreens = {
     0: const Center(
-      child: Text("Courses "),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text("Courses "),
+          Text("Courses "),
+        ],
+      ),
     ),
     1: const Center(
       child: Text("Profile "),

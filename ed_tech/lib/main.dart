@@ -1,5 +1,7 @@
-import 'package:ed_tech/login_screen.dart';
+import 'package:ed_tech/login/login_provider.dart';
+import 'package:ed_tech/login/login_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +20,10 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const LoginScreen(),
+      home: ChangeNotifierProvider(
+        create: (context) => LoginProvider(),
+        child: LoginScreen(),
+      ),
     );
   }
 }
