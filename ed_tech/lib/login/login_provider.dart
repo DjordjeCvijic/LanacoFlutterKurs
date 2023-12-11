@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
 class LoginProvider extends ChangeNotifier {
+  //login kredencijali
   final String email = "test@gmail.com";
   final String password = "test123";
+
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 

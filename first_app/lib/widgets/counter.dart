@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -12,7 +14,7 @@ class _CounterState extends State<Counter> {
   int count = 0;
   @override
   Widget build(BuildContext context) {
-    print("Pokrenut build");
+    log("Pokrenut build");
     final textTheme = Theme.of(context).textTheme;
     return Container(
       height: 80,
@@ -21,12 +23,13 @@ class _CounterState extends State<Counter> {
         children: [
           InkWell(
             onTap: () {
-              print("Oduzmi");
+              log("Oduzmi");
+
               setState(() {
                 count = count - 1;
               });
 
-              print("nova vrijednost:" + count.toString());
+              log("nova vrijednost:" + count.toString());
             },
             child: Container(
               padding: const EdgeInsets.all(8),
@@ -42,12 +45,12 @@ class _CounterState extends State<Counter> {
           const Gap(20),
           InkWell(
             onTap: () {
-              print("Dodaj");
+              log("Dodaj");
               setState(() {
                 count = count + 1;
               });
 
-              print("nova vrijednost:" + count.toString());
+              log("nova vrijednost:" + count.toString());
             },
             child: Container(
               padding: const EdgeInsets.all(8),

@@ -1,9 +1,12 @@
 import 'package:first_app/helpers/constants.dart';
+import 'package:first_app/screens/population/population_provider.dart';
+import 'package:first_app/screens/population/population_screen.dart';
 import 'package:first_app/widgets/counter.dart';
 import 'package:flutter/material.dart';
 import 'package:first_app/helpers/dummy_data.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
+import 'package:provider/provider.dart';
 
 class UserInfo extends StatelessWidget {
   const UserInfo({
@@ -73,7 +76,21 @@ class UserInfo extends StatelessWidget {
               tileColor: Colors.grey,
             ),
             const Gap(30),
-            Counter()
+            const Counter(),
+            const Gap(20),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => ChangeNotifierProvider(
+                      create: (context) => PopulationProvider(),
+                      child: const PopulationScreen(),
+                    ),
+                  ),
+                );
+              },
+              child: Text("Population"),
+            ),
           ],
         ),
       ),
