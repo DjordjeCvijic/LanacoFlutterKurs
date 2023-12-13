@@ -1,5 +1,9 @@
 import 'package:ed_tech/app_navigation/app_navigator_provider.dart';
 import 'package:ed_tech/helpers/constants.dart';
+import 'package:ed_tech/profile/profile_provider.dart';
+import 'package:ed_tech/profile/profile_screen.dart';
+import 'package:ed_tech/settings/settings_provider.dart';
+import 'package:ed_tech/settings/settings_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -20,11 +24,13 @@ class AppNavigator extends StatelessWidget {
         ],
       ),
     ),
-    1: const Center(
-      child: Text("Profile "),
+    1: ChangeNotifierProvider(
+      create: (context) => ProfileProvider(),
+      child: const ProfileScreen(),
     ),
-    2: const Center(
-      child: Text("Settings "),
+    2: ChangeNotifierProvider(
+      create: (context) => SettignProvider(),
+      child: const SettingsScreen(),
     ),
   };
 

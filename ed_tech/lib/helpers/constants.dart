@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class CustomImages {
   static const String loginImage = 'assets/images/login_img.png';
+  static const String profilePhoto = 'assets/images/profile_photo.png';
 }
 
 class CustomIcons {
@@ -13,6 +14,9 @@ class CustomIcons {
       'assets/icons/profile_navigation_icon.svg';
   static const String settingNavigationIcon =
       'assets/icons/settings_navigation_icon.svg';
+  static const String backButton = 'assets/icons/back_button.svg';
+  static const String profileIcon = 'assets/icons/profile_icon.svg';
+  static const String rightArrowIcon = 'assets/icons/right_arrow_icon.svg';
 }
 
 class CustomColors {
