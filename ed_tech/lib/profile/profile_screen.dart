@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'dart:io';
 
 import 'package:ed_tech/helpers/common_methods.dart';
@@ -94,7 +95,7 @@ class ProfileScreen extends StatelessWidget {
           ),
           ProfileOption(
             onOptionTap: () {
-              print("'Your Courses");
+              log("'Your Courses");
             },
             text: 'Your Courses',
           ),
@@ -104,7 +105,7 @@ class ProfileScreen extends StatelessWidget {
                 message: "Sacekajte trenutak",
                 context: context,
                 callback: () async {
-                  await Future.delayed(Duration(seconds: 5));
+                  await Future.delayed(const Duration(seconds: 5));
                 },
                 onFinished: () {
                   ScaffoldMessenger.of(context).showSnackBar(
@@ -119,7 +120,7 @@ class ProfileScreen extends StatelessWidget {
           ),
           ProfileOption(
             onOptionTap: () {
-              print("Payment");
+              log("Payment");
             },
             text: 'Payment',
           ),
@@ -127,7 +128,7 @@ class ProfileScreen extends StatelessWidget {
           MyTextButton(
             buttonText: "Log Out",
             onButtonPress: () {
-              print("klik na log out");
+              log("klik na log out");
             },
           )
         ],

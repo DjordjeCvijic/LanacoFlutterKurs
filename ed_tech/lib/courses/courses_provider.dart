@@ -18,7 +18,7 @@ class CoursesProvider extends ChangeNotifier {
 
     var decodedList = jsonDecode(response.body) as List;
 
-    await Future.delayed(Duration(milliseconds: 800));
+    await Future.delayed(const Duration(milliseconds: 800));
     for (var element in decodedList) {
       var student = StudentModel.fromJson(element);
       studentsList.add(student);

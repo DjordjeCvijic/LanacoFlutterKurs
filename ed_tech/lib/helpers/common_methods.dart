@@ -34,7 +34,7 @@ class CommonMethod {
                     Text(message),
                     const Gap(16),
                   ],
-                  CircularProgressIndicator()
+                  const CircularProgressIndicator()
                 ],
               ),
             ),

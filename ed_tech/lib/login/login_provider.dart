@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 class LoginProvider extends ChangeNotifier {
@@ -15,7 +17,7 @@ class LoginProvider extends ChangeNotifier {
   void printData() {
     String unesenEmail = emailController.text;
     String unesenaLozinka = passwordController.text;
-    print("Uneseni kredencijali: " + unesenEmail + " " + unesenaLozinka);
+    log("Uneseni kredencijali: $unesenEmail $unesenaLozinka");
     //print("Izvrsena metoda");
   }
 
@@ -31,7 +33,7 @@ class LoginProvider extends ChangeNotifier {
 
   Future<void> doSomething() async {
     buttonClicable = false;
-    await Future.delayed(Duration(seconds: 5));
+    await Future.delayed(const Duration(seconds: 5));
     buttonClicable = true;
   }
 }

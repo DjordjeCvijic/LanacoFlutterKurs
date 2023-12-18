@@ -76,7 +76,7 @@ class LoginScreen extends StatelessWidget {
                 MyTextButton(
                   buttonText: 'Forgot Password?',
                   onButtonPress: () {
-                    print("Click forgot password");
+                    log("Click forgot password");
                   },
                 ),
                 const Gap(16),

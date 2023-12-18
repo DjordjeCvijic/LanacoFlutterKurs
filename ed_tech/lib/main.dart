@@ -1,7 +1,8 @@
-import 'package:ed_tech/login/login_provider.dart';
-import 'package:ed_tech/login/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
+import '/login/login_provider.dart';
+import '/login/login_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,8 +22,8 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: ChangeNotifierProvider(
-        create: (context) => LoginProvider(),
-        child: LoginScreen(),
+        create: (_) => LoginProvider(),
+        child: const LoginScreen(),
       ),
     );
   }

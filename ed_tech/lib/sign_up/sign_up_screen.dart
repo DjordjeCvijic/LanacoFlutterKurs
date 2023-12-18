@@ -1,5 +1,6 @@
-import 'package:ed_tech/helpers/constants.dart';
 import 'package:flutter/material.dart';
+
+import '/helpers/constants.dart';
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});
@@ -10,7 +11,7 @@ class SignUpScreen extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            Text("Sign up screen"),
+            const Text("Sign up screen"),
             Image.asset(
               CustomImages.loginImage,
               height: 253,

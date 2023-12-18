@@ -7,7 +7,7 @@ class SettignProvider extends ChangeNotifier {
   final newNameController = TextEditingController();
 
   Future<void> fetchDate() async {
-    await Future.delayed(Duration(seconds: 2));
+    await Future.delayed(const Duration(seconds: 2));
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     name = prefs.getString("name_key") ?? "Ime nije uneseno";
   }
