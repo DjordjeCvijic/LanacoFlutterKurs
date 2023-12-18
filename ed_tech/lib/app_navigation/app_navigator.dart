@@ -1,4 +1,6 @@
 import 'package:ed_tech/app_navigation/app_navigator_provider.dart';
+import 'package:ed_tech/courses/courses_provider.dart';
+import 'package:ed_tech/courses/courses_screen.dart';
 import 'package:ed_tech/helpers/constants.dart';
 import 'package:ed_tech/profile/profile_provider.dart';
 import 'package:ed_tech/profile/profile_screen.dart';
@@ -15,21 +17,16 @@ class AppNavigator extends StatelessWidget {
   }) : super(key: key);
 
   final Map<int, dynamic> listOfScreens = {
-    0: const Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text("Courses "),
-          Text("Courses "),
-        ],
-      ),
+    0: ChangeNotifierProvider(
+      create: (_) => CoursesProvider(),
+      child: const CoursesScreen(),
     ),
     1: ChangeNotifierProvider(
-      create: (context) => ProfileProvider(),
+      create: (_) => ProfileProvider(),
       child: const ProfileScreen(),
     ),
     2: ChangeNotifierProvider(
-      create: (context) => SettignProvider(),
+      create: (_) => SettignProvider(),
       child: const SettingsScreen(),
     ),
   };

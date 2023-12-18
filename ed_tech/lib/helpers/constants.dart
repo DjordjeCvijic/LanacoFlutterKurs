@@ -59,10 +59,23 @@ extension CustomTextStyles on TextTheme {
         height: 32 / 24,
       );
 
+  TextStyle get headingH3 => const TextStyle(
+        fontSize: 32,
+        fontWeight: FontWeight.w700,
+        letterSpacing: -1,
+        height: 42 / 32,
+      );
+
   TextStyle get paragraphMedium => const TextStyle(
         fontSize: 14,
         fontWeight: FontWeight.w400,
         height: 21 / 14,
+        // leadingDistribution: TextLeadingDistribution.even,
+      );
+  TextStyle get paragraphLarge => const TextStyle(
+        fontSize: 16,
+        fontWeight: FontWeight.w400,
+        height: 26 / 16,
         // leadingDistribution: TextLeadingDistribution.even,
       );
 }

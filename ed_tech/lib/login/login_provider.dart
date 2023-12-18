@@ -5,8 +5,10 @@ class LoginProvider extends ChangeNotifier {
   final String email = "test@gmail.com";
   final String password = "test123";
 
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController emailController =
+      TextEditingController(text: "test@gmail.com");
+  final TextEditingController passwordController =
+      TextEditingController(text: "test123");
 
   bool buttonClicable = true;
 
