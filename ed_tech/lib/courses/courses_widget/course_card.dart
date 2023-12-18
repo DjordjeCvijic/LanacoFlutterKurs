@@ -1,5 +1,8 @@
+import 'package:ed_tech/courses/courses_provider.dart';
+import 'package:ed_tech/courses/courses_widget/course_details_screen.dart';
 import 'package:ed_tech/helpers/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class CourseCard extends StatelessWidget {
   const CourseCard({
@@ -19,76 +22,92 @@ class CourseCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8),
-        border: Border.all(
-          color: CustomColors.gray,
-          width: 1,
-        ),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Stack(
-            children: [
-              Image.asset(
-                imagePath,
-                height: 194,
-                width: double.infinity,
-                alignment: Alignment.center,
+    return InkWell(
+      onTap: () {
+        //
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (_) => ChangeNotifierProvider.value(
+              value: context.read<CoursesProvider>(),
+              child: CourseDetailsScreen(
+                name: category,
+                description: description,
               ),
-              Positioned(
-                right: 16,
-                bottom: 8,
-                child: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
+            ),
+          ),
+        );
+      },
+      child: Container(
+        width: double.infinity,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(8),
+          border: Border.all(
+            color: CustomColors.gray,
+            width: 1,
+          ),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Stack(
+              children: [
+                Image.asset(
+                  imagePath,
+                  height: 194,
+                  width: double.infinity,
                   alignment: Alignment.center,
-                  height: 24,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12),
-                    color: CustomColors.secondary,
-                  ),
-                  child: Text('\$ $price'),
                 ),
-              )
-            ],
-          ),
-          const SizedBox(height: 10),
-          Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 10,
-            ),
-            child: Text(
-              duration,
-              style: Theme.of(context).textTheme.paragraphMedium.copyWith(
-                    color: Colors.grey,
+                Positioned(
+                  right: 16,
+                  bottom: 8,
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    alignment: Alignment.center,
+                    height: 24,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(12),
+                      color: CustomColors.secondary,
+                    ),
+                    child: Text('\$ $price'),
                   ),
+                )
+              ],
             ),
-          ),
-          const SizedBox(height: 10),
-          Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 10,
+            const SizedBox(height: 10),
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 10,
+              ),
+              child: Text(
+                duration,
+                style: Theme.of(context).textTheme.paragraphMedium.copyWith(
+                      color: Colors.grey,
+                    ),
+              ),
             ),
-            child: Text(
-              category,
-              style: Theme.of(context).textTheme.headingH4,
+            const SizedBox(height: 10),
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 10,
+              ),
+              child: Text(
+                category,
+                style: Theme.of(context).textTheme.headingH4,
+              ),
             ),
-          ),
-          const SizedBox(height: 10),
-          Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 10,
+            const SizedBox(height: 10),
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 10,
+              ),
+              child: Text(
+                description,
+                style: Theme.of(context).textTheme.paragraphMedium,
+              ),
             ),
-            child: Text(
-              description,
-              style: Theme.of(context).textTheme.paragraphMedium,
-            ),
-          ),
-          const SizedBox(height: 10),
-        ],
+            const SizedBox(height: 10),
+          ],
+        ),
       ),
     );
   }
