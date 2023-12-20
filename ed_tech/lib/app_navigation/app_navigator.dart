@@ -36,7 +36,6 @@ class AppNavigator extends StatelessWidget {
     return Consumer<AppNavigatorProvider>(
       builder: (context, appNavigatorProvider, child) => Scaffold(
         resizeToAvoidBottomInset: false,
-        backgroundColor: Colors.white,
         body: SafeArea(
           child: listOfScreens.entries
               .elementAt(appNavigatorProvider.currentScreenIndex)

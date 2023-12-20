@@ -21,7 +21,9 @@ class CourseDetailsScreen extends StatelessWidget {
     );
 
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: const Text('Course Details'),
+      ),
       body: Center(
         child: FutureBuilder(
           future: provider.getUsers(),

@@ -96,9 +96,6 @@ class CoursesScreen extends StatelessWidget {
                               Radius.circular(20),
                             ),
                           ),
-                          color: MaterialStateProperty.all(
-                            CustomColors.secondary,
-                          ),
                           label: Text(category),
                         ),
                       );
