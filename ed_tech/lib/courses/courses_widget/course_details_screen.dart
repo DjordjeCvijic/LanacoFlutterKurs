@@ -1,3 +1,4 @@
+import 'package:ed_tech/courses/models/student_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

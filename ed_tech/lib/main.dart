@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -9,11 +10,12 @@ import '/login/login_screen.dart';
 import '/main_provider.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+  ]);
   runApp(
-    ChangeNotifierProvider(
-      create: (_) => MainProvider(),
-      child: const MyApp(),
-    ),
+    ChangeNotifierProvider(create: (_) => MainProvider()),
   );
 }
 
@@ -60,6 +62,14 @@ class _MyAppState extends State<MyApp> {
         create: (_) => LoginProvider(),
         child: const LoginScreen(),
       ),
+      builder: (context, home) {
+        return MediaQuery(
+          data: MediaQuery.of(context).copyWith(
+            textScaler: const TextScaler.linear(1.0),
+          ),
+          child: home ?? const Center(),
+        );
+      },
     );
   }
 }
